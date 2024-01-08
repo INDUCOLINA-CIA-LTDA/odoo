@@ -1822,6 +1822,8 @@ Please change the quantity done or the rounding precision of your unit of measur
         backorder_moves = self.env['stock.move'].create(backorder_moves_vals)
         # The backorder moves are not yet in their own picking. We do not want to check entire packs for those
         # ones as it could messed up the result_package_id of the moves being currently validated
+        if not cancel_backorder:
+            print("Here")
         backorder_moves.with_context(bypass_entire_pack=True)._action_confirm(merge=False)
         if cancel_backorder:
             backorder_moves.with_context(moves_todo=moves_todo)._action_cancel()

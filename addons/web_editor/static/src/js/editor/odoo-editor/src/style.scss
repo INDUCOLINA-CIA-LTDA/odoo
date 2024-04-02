@@ -45,7 +45,6 @@
     position: absolute;
     z-index: 10;
     padding: 0;
-    border: $border-width solid var(--o-table-ui-bg, #{$border-color});
 
     &:hover {
         visibility: visible !important;
@@ -285,11 +284,11 @@
         width: 19px;
         height: 19px;
         padding: 0;
-        margin-right: 3px;
+        margin-inline-end: 3px;
         margin-bottom: 3px;
 
         &:last-of-type {
-            margin-right: 0;
+            margin-inline-end: 0;
         }
         &.active {
             background-color: var(--oeTablepicker-color-accent, $o-brand-primary);

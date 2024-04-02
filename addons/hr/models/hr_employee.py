@@ -153,7 +153,7 @@ class HrEmployeePrivate(models.Model):
             avatar = employee._origin[image_field]
             if not avatar:
                 if employee.user_id:
-                    avatar = employee.user_id[avatar_field]
+                    avatar = employee.user_id.sudo()[avatar_field]
                 else:
                     avatar = base64.b64encode(employee._avatar_get_placeholder())
             employee[avatar_field] = avatar
@@ -240,6 +240,14 @@ class HrEmployeePrivate(models.Model):
         if self.check_access_rights('read', raise_exception=False):
             return super().get_view(view_id, view_type, **options)
         return self.env['hr.employee.public'].get_view(view_id, view_type, **options)
+
+    @api.model
+    def get_views(self, views, options):
+        if self.check_access_rights('read', raise_exception=False):
+            return super().get_views(views, options)
+        res = self.env['hr.employee.public'].get_views(views, options)
+        res['models'].update({'hr.employee': res['models']['hr.employee.public']})
+        return res
 
     @api.model
     def _search(self, args, offset=0, limit=None, order=None, count=False, access_rights_uid=None):

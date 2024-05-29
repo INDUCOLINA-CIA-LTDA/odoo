@@ -31,6 +31,7 @@
 # Martin Trigaux, 2024
 # Bole <bole@dajmi5.com>, 2024
 # Vladimir Vrgoč, 2024
+# etoimene, 2024
 # Matija Gudlin, 2024
 # 
 msgid ""
@@ -243,7 +244,7 @@ msgstr ""
 #: code:addons/account/models/account_account.py:0
 #, python-format
 msgid "%s.copy"
-msgstr "%s.copija"
+msgstr "%s.kopija"
 
 #. module: account
 #. odoo-python
@@ -5855,15 +5856,6 @@ msgid "Duplicated Ref"
 msgstr "Duplicirana referenca"
 
 #. module: account
-#. odoo-python
-#: code:addons/account/models/account_move.py:0
-#, python-format
-msgid ""
-"Duplicated vendor reference detected. You probably encoded twice the same "
-"vendor bill/credit note."
-msgstr ""
-
-#. module: account
 #: model:ir.model.fields,field_description:account.field_res_config_settings__module_account_reports
 msgid "Dynamic Reports"
 msgstr "Dinamički izvještaji"
@@ -9917,13 +9909,6 @@ msgid "Open"
 msgstr "Otvori"
 
 #. module: account
-#. odoo-python
-#: code:addons/account/models/account_move.py:0
-#, python-format
-msgid "Open list"
-msgstr ""
-
-#. module: account
 #: model:ir.model.fields,field_description:account.field_account_account__opening_balance
 msgid "Opening Balance"
 msgstr "Početni saldo"
@@ -11752,7 +11737,7 @@ msgstr "Obrnuta knjiženja"
 #: model_terms:ir.ui.view,arch_db:account.view_account_move_filter
 #: model_terms:ir.ui.view,arch_db:account.view_move_form
 msgid "Reversed"
-msgstr ""
+msgstr "Stornirano"
 
 #. module: account
 #: model_terms:ir.ui.view,arch_db:account.onboarding_chart_of_account_step
